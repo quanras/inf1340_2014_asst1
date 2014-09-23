@@ -32,15 +32,34 @@ def checksum (upc):
 
     # check type of input
     # raise TypeError if not string
+    if type(upc) is not str:
+        raise TypeError("Passed UPC is not a valid string!")
 
     # check length of string
     # raise ValueError if not 12
+    if len(upc) < 12:
+        raise ValueError("Passed UPC is too short!")
+    if len(upc) > 12:
+        raise ValueError("Passed UPC is too long!")
 
     # convert string to array
     # hint: use the list function
+    upcList = list(upc)   # NEED TO CHECK IF THESE ARE INTS
 
     # generate checksum using the first 11 digits provided
     # check against the the twelfth digit
+
+    # Calculate sum of values at odd indices and multiply by 3.
+    oddValues = 3 * (upcList[0] + upcList[2] + upcList[4] + upcList[6] + upcList[8] + upcList[10])
+
+    # Calculate sum of values at even indices
+    evenValues = upcList[1] + upcList[3] + upcList[5] + upcList[7] + upcList[9]
+
+    # Sum values calculated from odd and even indices
+    allValues = oddValues + evenValues
+
+    # Determine modulo 10
+    moduloValue = allValues % 10
 
     # return True if they are equal, False otherwise
 

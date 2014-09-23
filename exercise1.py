@@ -43,24 +43,46 @@ def grade_to_gpa(grade):
     letter_grade = ""
     gpa = 0.0
 
+    # Check if the input is a string (str). If so, run through the letter grade to GPA logic to determine GPA value.
     if type(grade) is str:
-        print ("letter") # remove this line once the code is implemented
-        # check that the grade is one of the accepted values
-        # assign grade to letter_grade
+        if (letter_grade == "A") or (letter_grade == "A+"):
+            gpa = 4.0
+        elif letter_grade == "A-":
+            gpa = 3.7
+        elif letter_grade == "B+":
+            gpa = 3.3
+        elif letter_grade == "B":
+            gpa = 3.0
+        elif letter_grade == "B-":
+            gpa = 2.7
+        elif letter_grade == "FZ":
+            gpa = 0.0
+        else:
+            # Error handling for string input that doesn't correspond to a grade.
+            raise ValueError("Passed string is not a valid letter grade!")
+
+    # Check if the input is an integer (int). If so, run through the numeric grade to GPA logic to determine GPA value.
     elif type(grade) is int:
-        print("mark") # remove this line once the code is implemented
-        # check that grade is in the accepted range
-        # convert the numeric grade to a letter grade
-        # assign the value to letter_grade
-        # hint: letter_grade = mark_to_letter(grade)
+        if (letter_grade > 84) and (letter_grade < 101):
+            gpa = 4.0
+        elif letter_grade > 79:
+            gpa = 3.7
+        elif letter_grade > 76:
+            gpa = 3.3
+        elif letter_grade > 72:
+            gpa = 3.0
+        elif letter_grade > 69:
+            gpa = 2.7
+        elif letter_grade < 70:
+            gpa = 0.0
+        else:
+            # Error handling for integer input that doesn't fall within the range of 0-100.
+        raise ValueError("Passed integer grade does not fall between 0 and 100)
+
+    # Error handling for input that is neither int or string
     else:
         # raise a TypeError exception
         raise TypeError("Invalid type passed as parameter")
-
-    # write a long if-statement to convert letter_grade
-    # assign the value to gpa
-    if letter_grade == "A":
-        gpa = 4.0
 
     return gpa
 
