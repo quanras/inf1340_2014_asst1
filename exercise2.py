@@ -49,19 +49,17 @@ def checksum (upc):
     # generate checksum using the first 11 digits provided
     # check against the the twelfth digit
 
-    # Calculate sum of values at odd indices and multiply by 3.
-    oddValues = 3 * (upcList[0] + upcList[2] + upcList[4] + upcList[6] + upcList[8] + upcList[10])
+    # Calculate sum of values at odd indices and multiply by 3. Then add values at even indices.
+    indexSum = (3 * (upcList[0] + upcList[2] + upcList[4] + upcList[6] + upcList[8] + upcList[10])) + (upcList[1] + upcList[3] + upcList[5] + upcList[7] + upcList[9])
 
-    # Calculate sum of values at even indices
-    evenValues = upcList[1] + upcList[3] + upcList[5] + upcList[7] + upcList[9]
+    # Determine modulo 10 value.
+    moduloValue = indexSum % 10
+    if moduloValue != 0:
+        moduloValue = 10 - moduloValue
 
-    # Sum values calculated from odd and even indices
-    allValues = oddValues + evenValues
-
-    # Determine modulo 10
-    moduloValue = allValues % 10
-
-    # return True if they are equal, False otherwise
-
-    return False
+    # Return True if they are equal, False otherwise
+    if moduloValue == upcList[11]:
+        return True
+    else:
+        return False
 

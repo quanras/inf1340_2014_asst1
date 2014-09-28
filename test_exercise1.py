@@ -11,7 +11,7 @@ __license__ = "MIT License"
 __status__ = "Prototype"
 
 # imports one per line
-import pytest
+# import pytest
 from exercise1 import grade_to_gpa
 
 
