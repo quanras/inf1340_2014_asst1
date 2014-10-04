@@ -6,13 +6,13 @@
     Assignment 1, Exercise 2, INF1340 Fall 2014
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
+__author__ = 'Susan Sim mpdified by Evan Moir'
+__email__ = "ses@drsusansim.org /"
 
 __copyright__ = "2014 Susan Sim"
 __license__ = "MIT License"
 
-__status__ = "Prototype"
+__status__ = "Ready for Submission"
 
 # imports one per line
 
@@ -26,7 +26,7 @@ def checksum (upc):
         Boolean: True, checksum is correct
         False, otherwise
     :raises:
-        TypeError if input is not a strong
+        TypeError if input is not a string
         ValueError if string is the wrong length (with error string stating how many digits are over or under
     """
 
@@ -54,7 +54,7 @@ def checksum (upc):
 
     # Determine modulo 10 value.
     moduloValue = indexSum % 10
-    if moduloValue != 0:
+    if moduloValue is not 0:
         moduloValue = 10 - moduloValue
 
     # Return True if they are equal, False otherwise

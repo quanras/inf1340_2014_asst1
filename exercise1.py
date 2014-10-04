@@ -11,8 +11,8 @@ Example:
 
 """
 
-__author__ = 'Susan Sim modified by Evan Moir'
-__email__ = "ses@drsusansim.org / evan.moir@utoronto.ca"
+__author__ = 'Susan Sim (modified by Evan Moir)'
+__email__ = "ses@drsusansim.org (evan.moir@utoronto.ca)"
 
 __copyright__ = "2014 Susan Sim"
 __license__ = "MIT License"
@@ -77,12 +77,12 @@ def grade_to_gpa(grade):
             gpa = 0.0
         else:
             # Error handling for integer input that doesn't fall within the range of 0-100.
-        raise ValueError("Passed integer grade does not fall between 0 and 100!)
+        raise ValueError("Passed integer grade does not fall between 0 and 100!")
 
     # Error handling for input that is neither int or string
     else:
         # raise a TypeError exception
-        raise TypeError("Invalid type passed as parameter")
+        raise TypeError("Invalid type passed as parameter!")
 
     return gpa
 
