@@ -57,14 +57,14 @@ def decide_rps(player1, player2):
         # as a function of the inputs.
         # Use Player 1 and Player 2's plays as the keys.
 
-        player1WinStates = {
+        player1_win_states = {
             "Rock": {"Scissors": True},
             "Paper": {"Rock": True},
             "Scissors": {"Paper": True}
         }
 
         # If the value at the key index described by the inputs returns True, Player 1 wins.
-        if (player1WinStates{player1}{player2}):
+        if player1_win_states{player1}{player2}:
             return 1
 
         # If it's not a tie, and Player 1 didn't win, Player 2 must have won.

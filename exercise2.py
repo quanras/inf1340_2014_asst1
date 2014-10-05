@@ -6,7 +6,7 @@
     Assignment 1, Exercise 2, INF1340 Fall 2014
 """
 
-__author__ = 'Susan Sim mpdified by Evan Moir'
+__author__ = 'Susan Sim modified by Evan Moir'
 __email__ = "ses@drsusansim.org /"
 
 __copyright__ = "2014 Susan Sim"
@@ -44,16 +44,16 @@ def checksum(upc):
 
     # convert string to array
     # hint: use the list function
-    upcList = list(upc)   # NEED TO CHECK IF THESE ARE INTS
+    upc_list = list(upc)   # NEED TO CHECK IF THESE ARE INTS
 
     # generate checksum using the first 11 digits provided
     # check against the the twelfth digit
 
     # Calculate sum of values at odd indices and multiply by 3. Then add values at even indices.
-    indexSum = (3 * (upcList[0] + upcList[2] + upcList[4] + upcList[6] + upcList[8] + upcList[10])) + (upcList[1] + upcList[3] + upcList[5] + upcList[7] + upcList[9])
+    index_sum = (3 * (upc_list[0] + upc_list[2] + upc_list[4] + upc_list[6] + upc_list[8] + upc_list[10])) + (upc_list[1] + upc_list[3] + up_list[5] + upc_list[7] + upc_list[9])
 
     # Determine modulo 10 value.
-    moduloValue = indexSum % 10
+    moduloValue = index_sum % 10
     if moduloValue is not 0:
         moduloValue = 10 - moduloValue
 

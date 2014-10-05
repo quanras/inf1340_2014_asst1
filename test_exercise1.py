@@ -32,6 +32,7 @@ def test_letter_grade():
         grade_to_gpa("wfucgwiubwt")
         grade_to_gpa("1234567890")
 
+
 def test_percentage_grade():
     """
     Numeric grade inputs
