@@ -17,7 +17,7 @@ __status__ = "Ready for Submission"
 # imports one per line
 
 
-def checksum (upc):
+def checksum(upc):
     """
     Checks if the digits in a UPC is consistent with checksum
 

@@ -38,6 +38,9 @@ def test_input():
     with pytest.raises(ValueError):
         checksum("1")
         checksum("1234567890")
+        checksum(123)
+        checksum(True)
+        checksum("upc")
 
     # other tests
 
