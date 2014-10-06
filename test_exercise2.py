@@ -23,7 +23,10 @@ def test_checksum():
     assert checksum("786936224306") is True
     assert checksum("085392132225") is True
     assert checksum("717951000841") is False
-    # other tests
+    assert checksum("121846511984") is True
+    assert checksum("121846511980") is False
+    assert checksum("121846511984") is False
+    assert checksum("121846511980") is True
 
 
 def test_input():
@@ -33,12 +36,12 @@ def test_input():
     with pytest.raises(TypeError):
         checksum(1.0)
         checksum(786936224306)
+        checksum(True)
 
     with pytest.raises(ValueError):
         checksum("1")
         checksum("1234567890")
         checksum(123)
-        checksum(True)
+        checksum("True")
         checksum("upc")
-        checksum(100.0)
-
+        checksum("100.0")

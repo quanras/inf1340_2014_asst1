@@ -26,7 +26,8 @@ def test_letter_grade():
     assert grade_to_gpa("B") == 4.0
     assert grade_to_gpa("B-") == 4.0
     assert grade_to_gpa("FZ") == 4.0
-    
+
+    # Invalid string inputs
     with pytest.raises(ValueError):
         grade_to_gpa("q")
         grade_to_gpa("wfucgwiubwt")
@@ -65,6 +66,7 @@ def test_percentage_grade():
     assert grade_to_gpa(37) == 0.0
     assert grade_to_gpa(0) == 0.0
 
+    # Integer inputs that are out of valid range (0-100).
     with pytest.raises(ValueError):
         grade_to_gpa(101)
         grade_to_gpa(-1)
@@ -74,12 +76,7 @@ def test_float_input():
     """
     Float inputs
     """
-    assert grade_to_gpa(69.2) == 0.0
-    assert grade_to_gpa(100.1) == 4.0
-    assert grade_to_gpa(80.1) == 3.7
-    assert grade_to_gpa(0.0) == 0.0
-    assert grade_to_gpa(70.0) == 2.7
-
     with pytest.raises(TypeError):
-        grade_to_gpa(82)
-        grade_to_gpa("ciuweciw")
+        grade_to_gpa(50.0)
+        grade_to_gpa(-0.1)
+        grade_to_gpa(100.1)
