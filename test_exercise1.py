@@ -11,7 +11,7 @@ __license__ = "MIT License"
 __status__ = "Final Submission"
 
 # imports one per line
-# import pytest
+import pytest
 from exercise1 import grade_to_gpa
 
 
@@ -77,8 +77,9 @@ def test_float_input():
     assert grade_to_gpa(69.2) == 0.0
     assert grade_to_gpa(100.1) == 4.0
     assert grade_to_gpa(80.1) == 3.7
+    assert grade_to_gpa(0.0) == 0.0
+    assert grade_to_gpa(70.0) == 2.7
 
     with pytest.raises(TypeError):
-        grade_to_gpa(82.5)
-
-# add functions for any other tests
+        grade_to_gpa(82)
+        grade_to_gpa("ciuweciw")

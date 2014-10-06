@@ -12,7 +12,6 @@ __status__ = "Prototype"
 
 # imports one per line
 
-# imports one per line
 import pytest
 from exercise2 import checksum
 
@@ -41,7 +40,5 @@ def test_input():
         checksum(123)
         checksum(True)
         checksum("upc")
+        checksum(100.0)
 
-    # other tests
-
-# add functions for any other tests

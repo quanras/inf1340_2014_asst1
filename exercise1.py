@@ -19,8 +19,6 @@ __license__ = "MIT License"
 
 __status__ = "Final Submission"
 
-# imports one per line
-
 
 def grade_to_gpa(grade):
     """
@@ -40,22 +38,19 @@ def grade_to_gpa(grade):
         ValueError if parameter is out of range
     """
 
-    letter_grade = ""
-    gpa = 0.0
-
     # Check if the input is a string (str). If so, run through the letter grade to GPA logic to determine GPA value.
     if type(grade) is str:
-        if letter_grade == "A" or letter_grade == "A+":
+        if grade == "A" or grade == "A+":
             gpa = 4.0
-        elif letter_grade == "A-":
+        elif grade == "A-":
             gpa = 3.7
-        elif letter_grade == "B+":
+        elif grade == "B+":
             gpa = 3.3
-        elif letter_grade == "B":
+        elif grade == "B":
             gpa = 3.0
-        elif letter_grade == "B-":
+        elif grade == "B-":
             gpa = 2.7
-        elif letter_grade == "FZ":
+        elif grade == "FZ":
             gpa = 0.0
         else:
             # Error handling for string input that doesn't correspond to a valid grade.
@@ -63,17 +58,17 @@ def grade_to_gpa(grade):
 
     # Check if the input is an integer (int). If so, run through the numeric grade to GPA logic to determine GPA value.
     elif type(grade) is int:
-        if letter_grade <= 100 and letter_grade > 84:
+        if 100 >= grade > 84:
             gpa = 4.0
-        elif letter_grade > 79:
+        elif grade > 79:
             gpa = 3.7
-        elif letter_grade > 76:
+        elif grade > 76:
             gpa = 3.3
-        elif letter_grade > 72:
+        elif grade > 72:
             gpa = 3.0
-        elif letter_grade > 69:
+        elif grade > 69:
             gpa = 2.7
-        elif (letter_grade < 70 and letter_grade >= 0):
+        elif 70 > grade >= 0:
             gpa = 0.0
         else:
             # Error handling for integer input that doesn't fall within the range of 0-100.

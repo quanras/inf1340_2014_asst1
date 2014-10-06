@@ -5,6 +5,8 @@
 __author__ = 'Evan Moir'
 __email__ = "evan.moir@utoronto.ca"
 
+__copyright__ = "2014 Evan Moir"
+__license__ = "MIT License"
 
 __status__ = "Final Submission"
 
@@ -43,6 +45,7 @@ def test_decide_rps():
     with pytest.raises(TypeError):
         decide_rps(1, "string!")
         decide_rps("string!", 1)
+        decide_rps(80.0, 9)
 
     # One or more inputs are not valid moves:
 
