@@ -44,12 +44,16 @@ def test_decide_rps():
 
     with pytest.raises(TypeError):
         decide_rps(1, "string!")
+    with pytest.raises(TypeError):
         decide_rps("string!", 1)
+    with pytest.raises(TypeError):
         decide_rps(80.0, 9)
 
     # One or more inputs are not valid moves:
 
     with pytest.raises(ValueError):
         decide_rps("rock", "Scissors")
+    with pytest.raises(ValueError):
         decide_rps("Paper", "rock")
+    with pytest.raises(ValueError):
         decide_rps("cqaefvcurbcwwr", "cwncuwctwruybtwub")

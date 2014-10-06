@@ -51,7 +51,8 @@ def decide_rps(player1, player2):
     if player2 not in valid_plays:
         raise ValueError("Player 2's play is not a valid move!")
 
-    # Once inputs are verified, check the game logic to determine play result. There are 3 possible outcomes:
+    # Once inputs are verified, check the game logic to determine play result. There are 3 possible outcomes, which:
+    # will be checked in this order:
     #   A tie
     #   Player 1 wins
     #   Player 2 wins
