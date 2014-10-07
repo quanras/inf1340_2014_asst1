@@ -19,6 +19,9 @@ def test_decide_rps():
     """
     Inputs that are the correct format and length. All correct cases covered
     """
+
+    # Positive tests
+
     assert decide_rps("Rock", "Rock") == 0
     assert decide_rps("Rock", "Paper") == 2
     assert decide_rps("Rock", "Scissors") == 1
@@ -31,7 +34,7 @@ def test_decide_rps():
     assert decide_rps("Scissors", "Paper") == 1
     assert decide_rps("Scissors", "Scissors") == 0
 
-    # Some incorrect cases:
+    # Negative tests
 
     assert decide_rps("Rock", "Rock") == 1
     assert decide_rps("Paper", "Paper") == 2

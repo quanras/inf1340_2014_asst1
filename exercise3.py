@@ -51,30 +51,14 @@ def decide_rps(player1, player2):
     if player2 not in valid_plays:
         raise ValueError("Player 2's play is not a valid move!")
 
-    # Once inputs are verified, check the game logic to determine play result. There are 3 possible outcomes, which:
-    # will be checked in this order:
-    #   A tie
-    #   Player 1 wins
-    #   Player 2 wins
+    # Once the inputs are verified, create a nested dictionary that emulates the matrix of possible game outcomes.
+    # Note that the indexes are valid plays, so that the matrix can be "queried" using the inputs to determine
+    # the game outcome.
+    outcome_matrix = {
+        "Rock": {"Rock": 0, "Paper": 2, "Scissors": 1},
+        "Paper": {"Rock": 1, "Paper": 0, "Scissors": 2},
+        "Scissors": {"Rock": 2, "Paper": 1, "Scissors": 0}
+    }
 
-    # If both players submit the same value, it's a tie.
-    if player1 == player2:
-        return 0
-    else:
-        # If the result is not a tie:
-        # Create a data object using nested dictionaries that represents the win states for Player 1 as a function of
-        # both inputs in their listed order (player1, player2). This is essentially re-creating 1/3 of the results table
-        # that was created on paper - only those tables cells that represented wins for Player 1.
-        player1_win_states = {
-            "Rock": {"Scissors": True},
-            "Paper": {"Rock": True},
-            "Scissors": {"Paper": True}
-        }
-
-        # If the value at the key index described by the inputs returns True, Player 1 wins.
-        if player1_win_states[player1][player2]:
-            return 1
-
-        # If it's not a tie, and Player 1 didn't win, Player 2 must have won.
-        else:
-            return 2
+    # "Query" the outcome matrix using the players' plays to determine the result, and return that.
+    return outcome_matrix[player1][player2]

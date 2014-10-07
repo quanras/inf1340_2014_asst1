@@ -19,12 +19,23 @@ def test_letter_grade():
     """
     Letter grade inputs
     """
+
+    # Positive Tests
     assert grade_to_gpa("A+") == 4.0
     assert grade_to_gpa("A") == 4.0
-    assert grade_to_gpa("A-") == 4.0
-    assert grade_to_gpa("B+") == 4.0
-    assert grade_to_gpa("B") == 4.0
-    assert grade_to_gpa("B-") == 4.0
+    assert grade_to_gpa("A-") == 3.7
+    assert grade_to_gpa("B+") == 3.3
+    assert grade_to_gpa("B") == 3.0
+    assert grade_to_gpa("B-") == 2.7
+    assert grade_to_gpa("FZ") == 0.0
+
+    # Negative Tests
+    assert grade_to_gpa("A+") == 0.0
+    assert grade_to_gpa("A") == 3.7
+    assert grade_to_gpa("A-") == 3.3
+    assert grade_to_gpa("B+") == 3.0
+    assert grade_to_gpa("B") == 2.7
+    assert grade_to_gpa("B-") == 0.0
     assert grade_to_gpa("FZ") == 4.0
 
     # Invalid string inputs
@@ -106,14 +117,10 @@ def test_percentage_grade():
     with pytest.raises(ValueError):
         grade_to_gpa(-1)
 
-
-def test_float_input():
-    """
-    Float inputs
-    """
+    # Float test (wrong type!)
     with pytest.raises(TypeError):
         grade_to_gpa(50.0)
-    with pytest.raises(TypeError):
-        grade_to_gpa(-0.1)
-    with pytest.raises(TypeError):
-        grade_to_gpa(100.1)
+
+test_letter_grade()
+test_percentage_grade()
+test_float_intput()

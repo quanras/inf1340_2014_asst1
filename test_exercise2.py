@@ -20,6 +20,8 @@ def test_checksum():
     """
     Inputs that are the correct format and length
     """
+
+    # Some positive tests and some negative tests
     assert checksum("786936224306") is True
     assert checksum("085392132225") is True
     assert checksum("717951000841") is False
@@ -52,3 +54,6 @@ def test_input():
         checksum("upc")
     with pytest.raises(ValueError):
         checksum("100.0")
+
+test_checksum()
+test_input()
